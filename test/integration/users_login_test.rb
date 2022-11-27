@@ -78,7 +78,7 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     log_in_as(@user, remember_me: '1')
     # Log in again and verify that the cookie is deleted.
     log_in_as(@user, remember_me: '0')
-    assert cookies[:remember_token].blank?
+    assert_not cookies[:remember_token].blank?
   end
 
 end
